@@ -1,12 +1,13 @@
-import React from 'react'
+import Login from './pages/Login.jsx'
 
-const App = () => {
+function App() {
   return (
-    <div className='text-xl font-semibold w-full h-screen bg-gray-800'>
-      {/* <img src="\public\Frame 2.png" alt="" /> */}
-      <img src="\public\Think Stack.png" alt="" />
-    </div>
+     <>
+      <main>
+        <Login/>
+      </main>
+     </>
   )
 }
 
-export default App 
+export default App
