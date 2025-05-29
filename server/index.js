@@ -5,6 +5,8 @@ import express from 'express'; // new way to import
 import dotenv from 'dotenv';
 import connectDB from './database/db.js'; 
 import userRoute from './routes/user.route.js';
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
 dotenv.config();
 
 connectDB();
@@ -16,7 +18,13 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-
+//default middleware
+app.use(express.json());
+app.use(cookieParser());
+app.use(cors({
+    origin:'http://localhost:8080', 
+    credentials:true //to allow cookies to be sent
+}));
 
 
 //apis   middleware

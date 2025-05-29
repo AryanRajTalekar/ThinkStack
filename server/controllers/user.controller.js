@@ -1,7 +1,7 @@
 //bussiness logic for user registration
 import {User} from '../models/user.model.js';
 import bcrypt, { compareSync } from 'bcryptjs';
-import { generateAuthToken } from '../utils/generateToken.js';
+import { generateToken } from '../utils/generateToken.js';
 
 
 export const register  = async (req,res)=>{
@@ -92,7 +92,7 @@ export const login = async (req,res)=>{
         }
 
         //token generation
-        generateAuthToken(res,user,`welcome back ${user.name}`);
+        generateToken(res,user,`welcome back ${user.name}`);
 
 
 
