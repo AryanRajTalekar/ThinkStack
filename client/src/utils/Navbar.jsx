@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import ModeToggle from "@/ModeToggle";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const user = true;
@@ -51,7 +52,8 @@ const Navbar = () => {
               <DropdownMenuContent>
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>Edit Profile</DropdownMenuItem>
+                <DropdownMenuItem><Link to="my-learning">My Learning</Link></DropdownMenuItem>
+                <DropdownMenuItem><Link to="profile">Edit Profile</Link></DropdownMenuItem>
                 <DropdownMenuItem>Dashboard</DropdownMenuItem>
                 <DropdownMenuItem>Log Out</DropdownMenuItem>
               </DropdownMenuContent>
@@ -70,7 +72,7 @@ const Navbar = () => {
 
       <div className="flex md:hidden items-center justify-center px-4 h-full ">
         <h1 className="font-extrabold text-4xl tracking-tight leading-tight text-white font-[Modern_Antiqua]">
-          Think<span className="text-purple-500">Stack</span>
+          Think<span className="text-purple-600">Stack</span>
         </h1>
 
         <MobileNavbar />
