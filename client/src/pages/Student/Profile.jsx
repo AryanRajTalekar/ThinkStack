@@ -66,10 +66,12 @@ const Profile = () => {
 
   if (isLoading) return <h1>Profile Loading...</h1>;
 
-  const user = data && data.user;
+  const user = data?.user ?? null;
+
+  if (!user)
+    return <h1 className="text-center mt-10">Failed to load profile data.</h1>;
 
   // console.log(user);
-  
 
   return (
     <div className="max-w-4xl mx-auto px-4 my-24">

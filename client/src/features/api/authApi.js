@@ -32,6 +32,11 @@ export const authApi = createApi({
                     console.log(error);
                 }
             }
+        }),logoutUser:builder.mutation({
+            query:()=>({
+                url:"logout",
+                method:"GET"
+            })
         }),
         loadUser:builder.query({
             query:()=>({
@@ -53,6 +58,7 @@ export const authApi = createApi({
 export const {
     useRegisterUserMutation,
     useLoginUserMutation,
+    useLogoutUserMutation,
     useLoadUserQuery,
     useUpdateUserMutation
 } = authApi;
